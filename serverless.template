@@ -3,7 +3,7 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application.",
   "Resources": {
-    "Get": {
+    "Ping": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
         "PackageType": "Image",
@@ -12,7 +12,7 @@
             "/lambda-entrypoint.sh"
           ],
           "Command": [
-            "OrderUp::OrderUp.Lambdas.DiscordBot.Function::Handle"
+            "OrderUp::OrderUp.Lambdas.DiscordBot.Function::Ping"
           ]
         },
         "ImageUri": "",
@@ -27,7 +27,7 @@
             "Type": "Api",
             "Properties": {
               "Path": "/ping",
-              "Method": "GET"
+              "Method": "POST"
             }
           }
         },
